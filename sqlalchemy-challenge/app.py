@@ -105,18 +105,18 @@ def tobs():
 @app.route("/api/v1.0/<start>")
 @app.route("/api/v1.0/<start>/<end>")
 def names(start=None, end=None):
-    start_date = datetime.strptime(start, "%Y-%m-%d").date()
+    #start_date = dt.strptime(start, "%Y-%m-%d").date()
     if end is not None:
         results = dict(session.query(func.min(Measurement.tobs),
                                      func.max(Measurement.tobs),
                                      func.avg(Measurement.tobs)). \
-                       filter(Measurement.date >= start_date).filter(Measurement.date <= end). \
+                       filter(Measurement.date >= start).filter(Measurement.date <= end). \
                        all())
     else:
         results = dict(session.query(func.min(Measurement.tobs),
                                      func.max(Measurement.tobs),
                                      func.avg(Measurement.tobs)). \
-                       filter(Measurement.date >= start_date). \
+                       filter(Measurement.date >= start). \
                        all())
 
     return jsonify(results)
