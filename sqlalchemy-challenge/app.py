@@ -1,3 +1,5 @@
+import datetime
+
 import numpy as np
 
 import sqlalchemy
@@ -45,8 +47,8 @@ def welcome():
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
         f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/<start><br/>"        
-        f"/api/v1.0/<start>/<end><br/>"        
+        f"/api/v1.0/<start><br/>"
+        f"/api/v1.0/<start>/<end><br/>"
     )
 
 
@@ -66,20 +68,21 @@ def precipitation():
     lastdate = dt.datetime.strptime(str(lastdate[0]), '%Y-%m-%d')
 
     # Perform a query to retrieve the data and precipitation scores
-    yearago =  lastdate - dt.timedelta(days=365)
+    yearago = lastdate - dt.timedelta(days=365)
 
-    prcp_results = session.query(Measurement.date, Measurement.prcp)\
-        .filter(Measurement.date>=yearago).\
+    prcp_results = session.query(Measurement.date, Measurement.prcp) \
+        .filter(Measurement.date >= yearago). \
         order_by(Measurement.date.asc()).all()
 
-    return jsonify({k:v for k,v in prcp_results})
+    return jsonify({k: v for k, v in prcp_results})
+
 
 @app.route("/api/v1.0/stations")
 def stations():
     ''' do code '''
     station_results = session.query(Station.station, Station.name).all()
 
-    return jsonify({k:v for k,v in station_results})
+    return jsonify({k: v for k, v in station_results})
 
 
 @app.route("/api/v1.0/tobs")
@@ -89,33 +92,34 @@ def tobs():
     lastdate = dt.datetime.strptime(str(lastdate[0]), '%Y-%m-%d')
 
     # Perform a query to retrieve the data and precipitation scores
-    yearago =  lastdate - dt.timedelta(days=365)
+    yearago = lastdate - dt.timedelta(days=365)
 
-    tobs_results = session.query(Measurement.date, Measurement.tobs)\
-        .filter(Measurement.date>=yearago).\
+    tobs_results = session.query(Measurement.date, Measurement.tobs) \
+        .filter(Measurement.date >= yearago). \
         order_by(Measurement.date.asc()).all()
 
-    return jsonify({k:v for k,v in tobs_results})
+    return jsonify({k: v for k, v in tobs_results})
 
 
 # You can have 2 routes to one function
 @app.route("/api/v1.0/<start>")
 @app.route("/api/v1.0/<start>/<end>")
-def names(start= None, end = None):
+def names(start=None, end=None):
+    start_date = datetime.strptime(start, "%Y-%m-%d").date()
     if end is not None:
-        results = session.query(func.min(Measurement.tobs),
-                                func.max(Measurement.tobs),
-                                func.avg(Measurement.tobs)).\
-                            filter(Measurement.date >= start).filter(Measurement.date <= end).all()
+        results = dict(session.query(func.min(Measurement.tobs),
+                                     func.max(Measurement.tobs),
+                                     func.avg(Measurement.tobs)). \
+                       filter(Measurement.date >= start_date).filter(Measurement.date <= end). \
+                       all())
     else:
-        results = session.query(func.min(Measurement.tobs),
-                                func.max(Measurement.tobs),
-                                func.avg(Measurement.tobs)).\
-                            filter(Measurement.date>=start).\
-                            all()
+        results = dict(session.query(func.min(Measurement.tobs),
+                                     func.max(Measurement.tobs),
+                                     func.avg(Measurement.tobs)). \
+                       filter(Measurement.date >= start_date). \
+                       all())
 
-    return jsonify({k, v, z for k,v,z in results})
-
+    return jsonify(results)
 
 
 if __name__ == '__main__':
