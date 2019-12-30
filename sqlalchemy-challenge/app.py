@@ -1,22 +1,15 @@
-import datetime
-
-import numpy as np
-
-import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func, inspect
+from sqlalchemy import create_engine, func
 
 from flask import Flask, jsonify
 
-import numpy as np
-import pandas as pd
 import datetime as dt
 
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///Resources/hawaii.sqlite")
+engine = create_engine("sqlite:///Resources/hawaii.sqlite", connect_args={'check_same_thread': False})
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -42,13 +35,19 @@ app = Flask(__name__)
 @app.route("/")
 def welcome():
     """List all available api routes."""
-    return (
-        f"Available Routes:<br/>"
-        f"/api/v1.0/precipitation<br/>"
-        f"/api/v1.0/stations<br/>"
-        f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/<start><br/>"
-        f"/api/v1.0/<start>/<end><br/>"
+    return (f"Welcome to Surf's Up!<br/>"
+            f"------------------------------------------<br/><br/>"
+            f"Available Routes:<br/>"
+            f"/api/v1.0/stations<br/>"
+            f">>>>>>>>>>>>: List of all weather observation stations<br/><br/>"
+            f"/api/v1.0/precipitation<br/>"
+            f">>>>>>>>>>>>: The latest year of precipitation data<br/><br/>"
+            f"/api/v1.0/tobs<br/>"
+            f">>>>>>>>>>>>: The latest year of temperature observation data<br/><br/>"
+            f"/api/v1.0/date_search/yyyy-mm-dd <br/>"
+            f">>>>>>>>>>>>: Low, high, and average temperature after a given date<br/><br/>"
+            f"/api/v1.0/date_search/yyyy-mm-dd/yyyy-mm-dd <br/>"
+            f">>>>>>>>>>>>: Low, high, and average temperature for a given period<br/>"
     )
 
 
@@ -64,14 +63,14 @@ def welcome():
 @app.route("/api/v1.0/precipitation")
 def precipitation():
     # Calculate the date 1 year ago from the last data point in the database
-    lastdate = session.query(Measurement.date).order_by(Measurement.date.desc()).first()
-    lastdate = dt.datetime.strptime(str(lastdate[0]), '%Y-%m-%d')
+    last_date = session.query(Measurement.date).order_by(Measurement.date.desc()).first()
+    last_date = dt.datetime.strptime(str(last_date[0]), '%Y-%m-%d')
 
     # Perform a query to retrieve the data and precipitation scores
-    yearago = lastdate - dt.timedelta(days=365)
+    year_ago = last_date - dt.timedelta(days=365)
 
     prcp_results = session.query(Measurement.date, Measurement.prcp) \
-        .filter(Measurement.date >= yearago). \
+        .filter(Measurement.date >= year_ago). \
         order_by(Measurement.date.asc()).all()
 
     return jsonify({k: v for k, v in prcp_results})
@@ -88,38 +87,60 @@ def stations():
 @app.route("/api/v1.0/tobs")
 def tobs():
     # Calculate the date 1 year ago from the last data point in the database
-    lastdate = session.query(Measurement.date).order_by(Measurement.date.desc()).first()
-    lastdate = dt.datetime.strptime(str(lastdate[0]), '%Y-%m-%d')
+    last_date = session.query(Measurement.date).order_by(Measurement.date.desc()).first()
+    last_date = dt.datetime.strptime(str(last_date[0]), '%Y-%m-%d')
 
     # Perform a query to retrieve the data and precipitation scores
-    yearago = lastdate - dt.timedelta(days=365)
+    year_ago = last_date - dt.timedelta(days=365)
 
     tobs_results = session.query(Measurement.date, Measurement.tobs) \
-        .filter(Measurement.date >= yearago). \
+        .filter(Measurement.date >= year_ago). \
         order_by(Measurement.date.asc()).all()
 
     return jsonify({k: v for k, v in tobs_results})
 
 
-# You can have 2 routes to one function
-@app.route("/api/v1.0/<start>")
-@app.route("/api/v1.0/<start>/<end>")
-def names(start=None, end=None):
-    #start_date = dt.strptime(start, "%Y-%m-%d").date()
-    if end is not None:
-        results = dict(session.query(func.min(Measurement.tobs),
-                                     func.max(Measurement.tobs),
-                                     func.avg(Measurement.tobs)). \
-                       filter(Measurement.date >= start).filter(Measurement.date <= end). \
-                       all())
-    else:
-        results = dict(session.query(func.min(Measurement.tobs),
-                                     func.max(Measurement.tobs),
-                                     func.avg(Measurement.tobs)). \
-                       filter(Measurement.date >= start). \
-                       all())
+@app.route('/api/v1.0/date_search/<start_date>')
+def start(start_date):
+    sel = [func.strftime("%Y-%m", Measurement.date),
+           func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
 
-    return jsonify(results)
+    results = (session.query(*sel)
+               .filter(func.strftime("%Y-%m-%d", Measurement.date) >= start_date)
+               .group_by(func.strftime("%Y-%m", Measurement.date))
+               .all())
+
+    dates = []
+    for result in results:
+        date_dict = {}
+        date_dict["Date"] = result[0]
+        date_dict["Low"] = result[1]
+        date_dict["Avg"] = result[2]
+        date_dict["High"] = result[3]
+        dates.append(date_dict)
+    return jsonify(dates)
+
+
+@app.route('/api/v1.0/date_search/<start_date>/<end_date>')
+def period(start_date, end_date):
+    sel = [func.strftime("%Y-%m", Measurement.date),
+           func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
+
+    results = (session.query(*sel)
+               .filter(func.strftime("%Y-%m-%d", Measurement.date) >= start_date)
+               .filter(func.strftime("%Y-%m-%d", Measurement.date) <= end_date)
+               .group_by(func.strftime("%Y-%m", Measurement.date))
+               .all())
+
+    dates = []
+    for result in results:
+        date_dict = {}
+        date_dict["Date"] = result[0]
+        date_dict["Low"] = result[1]
+        date_dict["Avg"] = result[2]
+        date_dict["High"] = result[3]
+        dates.append(date_dict)
+    return jsonify(dates)
 
 
 if __name__ == '__main__':
