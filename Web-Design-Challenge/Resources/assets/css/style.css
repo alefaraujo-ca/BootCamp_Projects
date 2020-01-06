@@ -1,36 +1,41 @@
-.logo {
-  font-weight: bold;
-  
-  color:white;
-  font-size: 40px;
-  font-style:bold;
-  
-}
-
-.first image {
-  width: 20%; 
-  float: left; 
-  margin : 5px;
-
-}
-
-.text {
-  float: right;
-}
-
-.p{
-  font-size: 20px;
+body{
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #ededed;
+  margin-bottom: 50px;
 }
 
-.p1{
-  font-size: 18px;
-  font-family:Arial, Helvetica, sans-serif;
-  background-color: white;
+.h1-summary{
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: bold;
+  font-size: 30px;
+}
+
+.p-linespacing{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 30px; /* 4px +12px + 4px */
+}
+
+.p-1{
+  font-size: 12px;
 }
 
 .image{
   height: 400px;
   width : 500px;
-  
+}
+
+.description-content{
+  background-color: white;
+  padding: 50px;
+}
+
+.visualization-content{
+  background-color: white;
+  padding: 50px;
+}
+
+.visualization-image{
+  height: 150px;
+  width: 130px
 }
