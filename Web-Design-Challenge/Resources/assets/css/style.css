@@ -1,18 +1,18 @@
 body{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
   background-color: #ededed;
   margin-bottom: 50px;
 }
 
 .h1-summary{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
   font-style: bold;
   font-size: 30px;
 }
 
 .p-linespacing{
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
   line-height: 30px; /* 4px +12px + 4px */
 }
 
@@ -50,16 +50,24 @@ body{
   background: none;
 }
 
-/* On screens that are 992px or less, set the background color to blue */
+/* On screens that are 750px or less, set the background color to white */
 @media only screen and (max-width: 750px) {
   body {
     background-color:#fff;
+    padding: 0px;
   }
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 750px) { 
-  navbar-custom {
-    background-color: teal;
+@media(max-width: 750px){
+  .navbar-expand-lg{
+  background-color:rgb(14, 162, 189) !important;
   }
- }
+  .navbar{
+      max-height: none; 
+      padding: inherit;
+  }
+  .navbar-brand{
+      padding: 10px !important; 
+  }
+}
