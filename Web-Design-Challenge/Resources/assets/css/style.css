@@ -37,7 +37,13 @@ body{
 
 .visualization-image{
   height: 150px;
-  width: 130px
+  width: 130px;
+  padding: 5px;
+}
+
+.visualization-imageY{
+  max-width: 100%;
+  padding: 0%;
 }
 
 .box{
@@ -58,8 +64,8 @@ body{
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 750px) { 
-  navbar-custom {
+@media (max-width: 750px) { 
+  navbar {
     background-color: teal;
   }
  }
