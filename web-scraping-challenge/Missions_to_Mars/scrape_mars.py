@@ -3,83 +3,125 @@ from splinter import Browser
 import time
 import pandas as pd
 
+
 def scrape():
-    executable_path={'executable_path':'chromedriver.exe'}
+    executable_path = {'executable_path': 'chromedriver.exe'}
     browser = Browser('chrome', **executable_path, headless=False)
 
-    # NASA Mars News
+    obj = ScrapeMars(browser)
 
-    url = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest'
-    browser.visit(url)
+    news_title, news_teaser = obj.mars_news()
+    featured_image_url = obj.mars_images()
+    mars_weather = obj.mars_weather()
+    mars_facts = obj.mars_facts()
+    hemisphere_image_urls = obj.mars_hemispheres()
 
-    html = browser.html
-    soup = bs(html, 'lxml')
-    table=soup.find('div', class_='grid_layout')
-    rows=table.find_all('li')
+    # Run the functions below and store into a dictionary
+    results = {
+        "title": news_title,
+        "teaser": news_teaser,
+        "image_URL": featured_image_url,
+        "weather": mars_weather,
+        "facts": mars_facts,
+        "hemispheres": hemisphere_image_urls
+    }
 
-    pre_df=[]
-    columns=['date', 'title', 'content']
-    for row in rows[0:]:
-        news_dict={}
-        cells=row.find('div', class_="list_text")
+    # Quit the browser and return the scraped results
+    browser.quit()
+    return results
 
-        for i, cell in enumerate(cells):
-            news_dict[columns[i]]=cell.text.strip()
-            #print(i, cell.text.strip())
-            if i==2:
-                pre_df.append(news_dict)
 
-    df_news_nasa=pd.DataFrame(pre_df, columns=columns)
+class ScrapeMars:
+    def __init__(self, browser_instance):
+        self.url_news = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest'
+        self.url_images = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
+        self.url_weather = 'https://twitter.com/marswxreport?lang=en'
+        self.url_facts = 'https://space-facts.com/mars/'
+        self.url_hemispheres = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+        self.browser = browser_instance
 
-    # JPL Mars Space Images - Featured Image
+    def mars_news(self):
+        '''
+        NASA Mars News
+        '''
 
-    url='https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
-    browser.visit(url)
-    html = browser.html
-    soup = bs(html, 'lxml')
+        self.browser.visit(self.url_news)
 
-    image = soup.find("img", class_="thumb")["src"]
+        html = self.browser.html
+        soup = bs(html, 'lxml')
+        title = soup.find('div', class_="content_title").text.strip()
+        news_p = soup.find('div', class_="article_teaser_body").text.strip()
 
-    # Mars Weather
-    url = 'https://twitter.com/marswxreport?lang=en'
-    browser.visit(url)
-    html = browser.html
-    soup = bs(html,'lxml')
-    mars_weather = soup.find('p', class_='TweetTextSize TweetTextSize--normal js-tweet-text tweet-text').text
+        return title, news_p
 
-    # Mars Facts
+    def mars_images(self):
+        '''
+        JPL Mars Space Images - Featured Image
+        '''
 
-    # Scrape the table of Mars facts
-    url = 'https://space-facts.com/mars/'
-    tables = pd.read_html(url)
-    df_profile = tables[0]
-    df_profile.columns = ['Aspect', 'Value']
+        self.browser.visit(self.url_images)
+        html = self.browser.html
+        soup = bs(html, 'lxml')
 
-    # Convert to HTML table string
-    df_profile.to_html('mars_profile.html')
+        image = soup.find("img", class_="thumb")["src"]
 
-    # Mars Hemispheres
-    url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
-    browser.visit(url)
-    html = browser.html
-    soup = bs(html, 'lxml')
+        return image
 
-    mars_hemispheres = []
-    links = soup.find_all('h3')
+    def mars_weather(self):
+        '''
+        Mars Weather
+        '''
 
-    for link in links:
-        mars_hemispheres.append(link.text)
+        self.browser.visit(self.url_weather)
+        html = self.browser.html
+        soup = bs(html, 'lxml')
+        weather = soup.find('p', class_='TweetTextSize TweetTextSize--normal js-tweet-text tweet-text').text
 
-    hemisphere_image_urls = []
-    data = {}
+        return weather
 
-    for link in mars_hemispheres:
-        
-        data['title'] = link
+    def mars_facts(self):
+        '''
+        Mars Facts
+        '''
+        # Scrape the table of Mars facts
+        tables = pd.read_html(self.url_facts)
+        df_profile = tables[0]
+        df_profile.columns = ['Aspect', 'Value']
 
-        browser.click_link_by_partial_text(link)
-        data['image_url'] = browser.find_by_text('Sample')['href']
+        # Convert to HTML table string
+        df_profile.to_html('mars_profile.html')
 
-        hemisphere_image_urls.append(data)
-        
-        browser.back()
+        return df_profile
+
+    def mars_hemispheres(self):
+        '''
+        Mars Hemispheres
+        '''
+        self.browser.visit(self.url_hemispheres)
+        html = self.browser.html
+        soup = bs(html, 'lxml')
+
+        mars_hemispheres = []
+        links = soup.find_all('h3')
+
+        for link in links:
+            mars_hemispheres.append(link.text)
+
+        image_urls = []
+        data = {}
+
+        for link in mars_hemispheres:
+            data['title'] = link
+
+            self.browser.click_link_by_partial_text(link)
+            data['image_url'] = self.browser.links.find_by_partial_text('Sample')['href']
+
+            image_urls.append(data)
+
+            self.browser.back()
+
+        return image_urls
+
+
+if __name__ == '__main__':
+    scrape()
