@@ -87,11 +87,14 @@ class ScrapeMars:
         tables = pd.read_html(self.url_facts)
         df_profile = tables[0]
         df_profile.columns = ['Aspect', 'Value']
+        df_profile.set_index('Aspect', inplace=True)
 
         # Convert to HTML table string
         df_profile.to_html('mars_profile.html')
 
-        return df_profile
+        dict_profile = df_profile.to_dict()
+
+        return dict_profile
 
     def mars_hemispheres(self):
         '''
