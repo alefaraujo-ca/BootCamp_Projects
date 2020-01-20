@@ -1,79 +1,105 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>Jumbotron Template for Bootstrap</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+  <title>Mission to Mars</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
 
-    <!-- Custom styles for this template -->
-    <!--<link href="jumbotron.css" rel="stylesheet">-->
-  </head>
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <body>
+  <style>
+    .border-4 {
+      border-width: 4px !important;
+    }
 
-    <main role="main">
+    .dataframe {
+      font-size: small;
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <!--<link href="jumbotron.css" rel="stylesheet">-->
 
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <div class="container text-center">
-          <h1 class="display-3">Mission to Mars</h1>
-          <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
-        </div>
-      </div>
+</head>
 
+<body>
+
+  <main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron container text-center">
+      <h1 class="display-3">Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <div class="container">
       <div class="row">
-          <div class="col-md-12">
-              <h2><strong>Latest Mars News</strong></h2>
-              <h4>{{mars.title}}</h4>
-          </div>
+        <div class="col-md-12">
+          <h3>Latest Mars News</h3>
+          <hr>
+          <h5>{{mars.title}}</h5>
+          <p>{{mars.teaser}}</p>
+        </div>
       </div>
 
-      <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      <div class="row" id="mars-image">
+        <div class="col-md-8">
+          <h3>Featured Mars Image</h3>
+          <hr>
+          <img class="img-fluid" src="{{mars.image_URL}}" alt="Mars Image">
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-12 p-2">
+            <div class="media border border-light border-4">
+              <div class="media-body my-3 mx-3">
+                <h5>Current Weather on Mars</h5>
+                <p><small>{{mars.weather}}</small></p>
+              </div>
+            </div>
           </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <div class="col-md-12 my-0 mx-0">
+            <h5>Mars Facts</h5>
+            <p><small>{{mars.facts | safe}}</small></p>
           </div>
         </div>
+      </div>
+    </div>
 
-        <hr>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-12 text-center">
+          <h2>Mars Hemispheres</h2>
+          <hr>
+        </div>
 
-      </div> <!-- /container -->
+        {% for hemi in mars.hemispheres %}
+        <div class="col-md-6">
+          <br>
+          <div class="media border border-light border-4">
+            <figure class="figure">
+              <img class="figure-img img-fluid" src="{{ hemi.image }}">
+              <figcaption class="figure-caption">
+                <h4>{{ hemi.title }}</h4>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
 
-    </main>
+      <hr>
 
-    <footer class="container">
-      <p>&copy; Company 2017-2018</p>
-    </footer>
+    </div> <!-- /container -->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-  </body>
+  </main>
+
+</body>
+
 </html>

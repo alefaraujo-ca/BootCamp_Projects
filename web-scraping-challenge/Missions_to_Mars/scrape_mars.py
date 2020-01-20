@@ -64,8 +64,9 @@ class ScrapeMars:
         soup = bs(html, 'lxml')
 
         image = soup.find("img", class_="thumb")["src"]
+        featured_image_url = 'https://www.jpl.nasa.gov' + image
 
-        return image
+        return featured_image_url
 
     def mars_weather(self):
         '''
@@ -86,15 +87,13 @@ class ScrapeMars:
         # Scrape the table of Mars facts
         tables = pd.read_html(self.url_facts)
         df_profile = tables[0]
-        df_profile.columns = ['Aspect', 'Value']
-        df_profile.set_index('Aspect', inplace=True)
+        df_facts = df_profile.set_index(0).rename(columns={1: "Value"})
+        del df_facts.index.name
 
         # Convert to HTML table string
-        df_profile.to_html('mars_profile.html')
+        mars_facts = df_facts.to_html(justify='left', classes="table-condensed")
 
-        dict_profile = df_profile.to_dict()
-
-        return dict_profile
+        return mars_facts
 
     def mars_hemispheres(self):
         '''
@@ -113,14 +112,16 @@ class ScrapeMars:
         image_urls = []
         data = {}
 
-        for link in mars_hemispheres:
-            data['title'] = link
-
-            self.browser.click_link_by_partial_text(link)
-            data['image_url'] = self.browser.links.find_by_partial_text('Sample')['href']
-
+        for title in mars_hemispheres:
+            self.browser.click_link_by_partial_text(title)
+            
+            data = {
+                'title': title,
+                'image' : self.browser.links.find_by_partial_text('Sample')['href']
+            }
+            
             image_urls.append(data)
-
+            
             self.browser.back()
 
         return image_urls
