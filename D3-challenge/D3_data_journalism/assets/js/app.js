@@ -79,7 +79,7 @@ function renderYAxis(newYScale, yAxis) {
 function renderCircles(circlesGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
 
     circlesGroup.transition()
-      .duration(2000)
+      .duration(1000)
       .attr('cx', data => newXScale(data[chosenXAxis]))
       .attr('cy', data => newYScale(data[chosenYAxis]))
 
@@ -90,7 +90,7 @@ function renderCircles(circlesGroup, newXScale, chosenXAxis, newYScale, chosenYA
 function renderText(textGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
 
     textGroup.transition()
-      .duration(2000)
+      .duration(1000)
       .attr('x', d => newXScale(d[chosenXAxis]))
       .attr('y', d => newYScale(d[chosenYAxis]));
 
