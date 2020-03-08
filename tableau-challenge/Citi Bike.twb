@@ -1,0 +1,1464 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20201.20.0219.0753                               -->
+<workbook original-version='18.1' source-build='2020.1.0 (20201.20.0219.0753)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='JC-202001-citibike-tripdata' inline='true' name='federated.0wvau1m1jdw55r0zlumtz1xi4nln' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='JC-202001-citibike-tripdata' name='textscan.153wdfq0fhgu9a18ensnu025t523'>
+            <connection class='textscan' directory='C:/Users/Alessandra/Documents/UofT/databootcamp-homework/tableau-challenge/Data' filename='JC-202001-citibike-tripdata.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation all='true' name='JC-202001-citibike-tripdata.csv+' type='union'>
+          <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+            <column datatype='integer' name='tripduration' />
+            <column datatype='string' name='starttime' />
+            <column datatype='datetime' name='stoptime' />
+            <column datatype='integer' name='start station id' />
+            <column datatype='string' name='start station name' />
+            <column datatype='real' name='start station latitude' />
+            <column datatype='real' name='start station longitude' />
+            <column datatype='integer' name='end station id' />
+            <column datatype='string' name='end station name' />
+            <column datatype='real' name='end station latitude' />
+            <column datatype='real' name='end station longitude' />
+            <column datatype='integer' name='bikeid' />
+            <column datatype='string' name='usertype' />
+            <column datatype='integer' name='birth year' />
+            <column datatype='integer' name='gender' />
+            <column datatype='string' name='Table Name' />
+          </columns>
+          <relation connection='textscan.153wdfq0fhgu9a18ensnu025t523' name='JC-202001-citibike-tripdata.csv' table='[JC-202001-citibike-tripdata#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='tripduration' ordinal='0' />
+              <column datatype='datetime' name='starttime' ordinal='1' />
+              <column datatype='datetime' name='stoptime' ordinal='2' />
+              <column datatype='integer' name='start station id' ordinal='3' />
+              <column datatype='string' name='start station name' ordinal='4' />
+              <column datatype='real' name='start station latitude' ordinal='5' />
+              <column datatype='real' name='start station longitude' ordinal='6' />
+              <column datatype='integer' name='end station id' ordinal='7' />
+              <column datatype='string' name='end station name' ordinal='8' />
+              <column datatype='real' name='end station latitude' ordinal='9' />
+              <column datatype='real' name='end station longitude' ordinal='10' />
+              <column datatype='integer' name='bikeid' ordinal='11' />
+              <column datatype='string' name='usertype' ordinal='12' />
+              <column datatype='integer' name='birth year' ordinal='13' />
+              <column datatype='integer' name='gender' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.153wdfq0fhgu9a18ensnu025t523' name='JC-201901-citibike-tripdata.csv' table='[JC-201901-citibike-tripdata#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='tripduration' ordinal='0' />
+              <column datatype='datetime' name='starttime' ordinal='1' />
+              <column datatype='datetime' name='stoptime' ordinal='2' />
+              <column datatype='integer' name='start station id' ordinal='3' />
+              <column datatype='string' name='start station name' ordinal='4' />
+              <column datatype='real' name='start station latitude' ordinal='5' />
+              <column datatype='real' name='start station longitude' ordinal='6' />
+              <column datatype='integer' name='end station id' ordinal='7' />
+              <column datatype='string' name='end station name' ordinal='8' />
+              <column datatype='real' name='end station latitude' ordinal='9' />
+              <column datatype='real' name='end station longitude' ordinal='10' />
+              <column datatype='integer' name='bikeid' ordinal='11' />
+              <column datatype='string' name='usertype' ordinal='12' />
+              <column datatype='integer' name='birth year' ordinal='13' />
+              <column datatype='integer' name='gender' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.153wdfq0fhgu9a18ensnu025t523' name='JC-201902-citibike-tripdata.csv' table='[JC-201902-citibike-tripdata#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='tripduration' ordinal='0' />
+              <column datatype='datetime' name='starttime' ordinal='1' />
+              <column datatype='datetime' name='stoptime' ordinal='2' />
+              <column datatype='integer' name='start station id' ordinal='3' />
+              <column datatype='string' name='start station name' ordinal='4' />
+              <column datatype='real' name='start station latitude' ordinal='5' />
+              <column datatype='real' name='start station longitude' ordinal='6' />
+              <column datatype='integer' name='end station id' ordinal='7' />
+              <column datatype='string' name='end station name' ordinal='8' />
+              <column datatype='real' name='end station latitude' ordinal='9' />
+              <column datatype='real' name='end station longitude' ordinal='10' />
+              <column datatype='integer' name='bikeid' ordinal='11' />
+              <column datatype='string' name='usertype' ordinal='12' />
+              <column datatype='integer' name='birth year' ordinal='13' />
+              <column datatype='integer' name='gender' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.153wdfq0fhgu9a18ensnu025t523' name='JC-201903-citibike-tripdata.csv' table='[JC-201903-citibike-tripdata#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='tripduration' ordinal='0' />
+              <column datatype='datetime' name='starttime' ordinal='1' />
+              <column datatype='datetime' name='stoptime' ordinal='2' />
+              <column datatype='integer' name='start station id' ordinal='3' />
+              <column datatype='string' name='start station name' ordinal='4' />
+              <column datatype='real' name='start station latitude' ordinal='5' />
+              <column datatype='real' name='start station longitude' ordinal='6' />
+              <column datatype='integer' name='end station id' ordinal='7' />
+              <column datatype='string' name='end station name' ordinal='8' />
+              <column datatype='real' name='end station latitude' ordinal='9' />
+              <column datatype='real' name='end station longitude' ordinal='10' />
+              <column datatype='integer' name='bikeid' ordinal='11' />
+              <column datatype='string' name='usertype' ordinal='12' />
+              <column datatype='integer' name='birth year' ordinal='13' />
+              <column datatype='integer' name='gender' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.153wdfq0fhgu9a18ensnu025t523' name='JC-201904-citibike-tripdata.csv' table='[JC-201904-citibike-tripdata#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='tripduration' ordinal='0' />
+              <column datatype='datetime' name='starttime' ordinal='1' />
+              <column datatype='datetime' name='stoptime' ordinal='2' />
+              <column datatype='integer' name='start station id' ordinal='3' />
+              <column datatype='string' name='start station name' ordinal='4' />
+              <column datatype='real' name='start station latitude' ordinal='5' />
+              <column datatype='real' name='start station longitude' ordinal='6' />
+              <column datatype='integer' name='end station id' ordinal='7' />
+              <column datatype='string' name='end station name' ordinal='8' />
+              <column datatype='real' name='end station latitude' ordinal='9' />
+              <column datatype='real' name='end station longitude' ordinal='10' />
+              <column datatype='integer' name='bikeid' ordinal='11' />
+              <column datatype='string' name='usertype' ordinal='12' />
+              <column datatype='integer' name='birth year' ordinal='13' />
+              <column datatype='integer' name='gender' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.153wdfq0fhgu9a18ensnu025t523' name='JC-201905-citibike-tripdata.csv' table='[JC-201905-citibike-tripdata#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='tripduration' ordinal='0' />
+              <column datatype='datetime' name='starttime' ordinal='1' />
+              <column datatype='datetime' name='stoptime' ordinal='2' />
+              <column datatype='integer' name='start station id' ordinal='3' />
+              <column datatype='string' name='start station name' ordinal='4' />
+              <column datatype='real' name='start station latitude' ordinal='5' />
+              <column datatype='real' name='start station longitude' ordinal='6' />
+              <column datatype='integer' name='end station id' ordinal='7' />
+              <column datatype='string' name='end station name' ordinal='8' />
+              <column datatype='real' name='end station latitude' ordinal='9' />
+              <column datatype='real' name='end station longitude' ordinal='10' />
+              <column datatype='integer' name='bikeid' ordinal='11' />
+              <column datatype='string' name='usertype' ordinal='12' />
+              <column datatype='integer' name='birth year' ordinal='13' />
+              <column datatype='integer' name='gender' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.153wdfq0fhgu9a18ensnu025t523' name='JC-201906-citibike-tripdata.csv' table='[JC-201906-citibike-tripdata#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='tripduration' ordinal='0' />
+              <column datatype='datetime' name='starttime' ordinal='1' />
+              <column datatype='datetime' name='stoptime' ordinal='2' />
+              <column datatype='integer' name='start station id' ordinal='3' />
+              <column datatype='string' name='start station name' ordinal='4' />
+              <column datatype='real' name='start station latitude' ordinal='5' />
+              <column datatype='real' name='start station longitude' ordinal='6' />
+              <column datatype='integer' name='end station id' ordinal='7' />
+              <column datatype='string' name='end station name' ordinal='8' />
+              <column datatype='real' name='end station latitude' ordinal='9' />
+              <column datatype='real' name='end station longitude' ordinal='10' />
+              <column datatype='integer' name='bikeid' ordinal='11' />
+              <column datatype='string' name='usertype' ordinal='12' />
+              <column datatype='integer' name='birth year' ordinal='13' />
+              <column datatype='integer' name='gender' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.153wdfq0fhgu9a18ensnu025t523' name='JC-201907-citibike-tripdata.csv' table='[JC-201907-citibike-tripdata#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='tripduration' ordinal='0' />
+              <column datatype='datetime' name='starttime' ordinal='1' />
+              <column datatype='datetime' name='stoptime' ordinal='2' />
+              <column datatype='integer' name='start station id' ordinal='3' />
+              <column datatype='string' name='start station name' ordinal='4' />
+              <column datatype='real' name='start station latitude' ordinal='5' />
+              <column datatype='real' name='start station longitude' ordinal='6' />
+              <column datatype='integer' name='end station id' ordinal='7' />
+              <column datatype='string' name='end station name' ordinal='8' />
+              <column datatype='real' name='end station latitude' ordinal='9' />
+              <column datatype='real' name='end station longitude' ordinal='10' />
+              <column datatype='integer' name='bikeid' ordinal='11' />
+              <column datatype='string' name='usertype' ordinal='12' />
+              <column datatype='integer' name='birth year' ordinal='13' />
+              <column datatype='integer' name='gender' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.153wdfq0fhgu9a18ensnu025t523' name='JC-201908-citibike-tripdata.csv' table='[JC-201908-citibike-tripdata#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='tripduration' ordinal='0' />
+              <column datatype='datetime' name='starttime' ordinal='1' />
+              <column datatype='datetime' name='stoptime' ordinal='2' />
+              <column datatype='integer' name='start station id' ordinal='3' />
+              <column datatype='string' name='start station name' ordinal='4' />
+              <column datatype='real' name='start station latitude' ordinal='5' />
+              <column datatype='real' name='start station longitude' ordinal='6' />
+              <column datatype='integer' name='end station id' ordinal='7' />
+              <column datatype='string' name='end station name' ordinal='8' />
+              <column datatype='real' name='end station latitude' ordinal='9' />
+              <column datatype='real' name='end station longitude' ordinal='10' />
+              <column datatype='integer' name='bikeid' ordinal='11' />
+              <column datatype='string' name='usertype' ordinal='12' />
+              <column datatype='integer' name='birth year' ordinal='13' />
+              <column datatype='integer' name='gender' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.153wdfq0fhgu9a18ensnu025t523' name='JC-201909-citibike-tripdata.csv' table='[JC-201909-citibike-tripdata#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='tripduration' ordinal='0' />
+              <column datatype='datetime' name='starttime' ordinal='1' />
+              <column datatype='datetime' name='stoptime' ordinal='2' />
+              <column datatype='integer' name='start station id' ordinal='3' />
+              <column datatype='string' name='start station name' ordinal='4' />
+              <column datatype='real' name='start station latitude' ordinal='5' />
+              <column datatype='real' name='start station longitude' ordinal='6' />
+              <column datatype='integer' name='end station id' ordinal='7' />
+              <column datatype='string' name='end station name' ordinal='8' />
+              <column datatype='real' name='end station latitude' ordinal='9' />
+              <column datatype='real' name='end station longitude' ordinal='10' />
+              <column datatype='integer' name='bikeid' ordinal='11' />
+              <column datatype='string' name='usertype' ordinal='12' />
+              <column datatype='integer' name='birth year' ordinal='13' />
+              <column datatype='integer' name='gender' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.153wdfq0fhgu9a18ensnu025t523' name='JC-201910-citibike-tripdata.csv' table='[JC-201910-citibike-tripdata#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='tripduration' ordinal='0' />
+              <column datatype='datetime' name='starttime' ordinal='1' />
+              <column datatype='datetime' name='stoptime' ordinal='2' />
+              <column datatype='integer' name='start station id' ordinal='3' />
+              <column datatype='string' name='start station name' ordinal='4' />
+              <column datatype='real' name='start station latitude' ordinal='5' />
+              <column datatype='real' name='start station longitude' ordinal='6' />
+              <column datatype='integer' name='end station id' ordinal='7' />
+              <column datatype='string' name='end station name' ordinal='8' />
+              <column datatype='real' name='end station latitude' ordinal='9' />
+              <column datatype='real' name='end station longitude' ordinal='10' />
+              <column datatype='integer' name='bikeid' ordinal='11' />
+              <column datatype='string' name='usertype' ordinal='12' />
+              <column datatype='integer' name='birth year' ordinal='13' />
+              <column datatype='integer' name='gender' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.153wdfq0fhgu9a18ensnu025t523' name='JC-201911-citibike-tripdata.csv' table='[JC-201911-citibike-tripdata#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='tripduration' ordinal='0' />
+              <column datatype='datetime' name='starttime' ordinal='1' />
+              <column datatype='datetime' name='stoptime' ordinal='2' />
+              <column datatype='integer' name='start station id' ordinal='3' />
+              <column datatype='string' name='start station name' ordinal='4' />
+              <column datatype='real' name='start station latitude' ordinal='5' />
+              <column datatype='real' name='start station longitude' ordinal='6' />
+              <column datatype='integer' name='end station id' ordinal='7' />
+              <column datatype='string' name='end station name' ordinal='8' />
+              <column datatype='real' name='end station latitude' ordinal='9' />
+              <column datatype='real' name='end station longitude' ordinal='10' />
+              <column datatype='integer' name='bikeid' ordinal='11' />
+              <column datatype='string' name='usertype' ordinal='12' />
+              <column datatype='integer' name='birth year' ordinal='13' />
+              <column datatype='integer' name='gender' ordinal='14' />
+            </columns>
+          </relation>
+          <relation connection='textscan.153wdfq0fhgu9a18ensnu025t523' name='JC-201912-citibike-tripdata.csv' table='[JC-201912-citibike-tripdata#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='tripduration' ordinal='0' />
+              <column datatype='datetime' name='starttime' ordinal='1' />
+              <column datatype='datetime' name='stoptime' ordinal='2' />
+              <column datatype='integer' name='start station id' ordinal='3' />
+              <column datatype='string' name='start station name' ordinal='4' />
+              <column datatype='real' name='start station latitude' ordinal='5' />
+              <column datatype='real' name='start station longitude' ordinal='6' />
+              <column datatype='integer' name='end station id' ordinal='7' />
+              <column datatype='string' name='end station name' ordinal='8' />
+              <column datatype='real' name='end station latitude' ordinal='9' />
+              <column datatype='real' name='end station longitude' ordinal='10' />
+              <column datatype='integer' name='bikeid' ordinal='11' />
+              <column datatype='string' name='usertype' ordinal='12' />
+              <column datatype='integer' name='birth year' ordinal='13' />
+              <column datatype='integer' name='gender' ordinal='14' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tripduration</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[tripduration]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>tripduration</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>starttime</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[starttime]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>starttime</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stoptime</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[stoptime]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>stoptime</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start station id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[start station id]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>start station id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start station name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[start station name]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>start station name</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start station latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[start station latitude]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>start station latitude</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start station longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[start station longitude]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>start station longitude</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>end station id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[end station id]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>end station id</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>end station name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[end station name]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>end station name</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>end station latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[end station latitude]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>end station latitude</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>end station longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[end station longitude]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>end station longitude</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bikeid</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[bikeid]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>bikeid</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>usertype</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[usertype]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>usertype</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>birth year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[birth year]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>birth year</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gender</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[gender]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>gender</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Table Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Table Name]</local-name>
+            <parent-name>[JC-202001-citibike-tripdata.csv+]</parent-name>
+            <remote-alias>Table Name</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='integer' name='[birth year]' role='dimension' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[end station latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[end station longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[start station latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[start station longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='date' datatype='date' datatype-customized='true' name='[starttime - Split 1]' role='dimension' type='ordinal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[starttime]'>
+        <calculation class='tableau' formula='DATE(DATEPARSE ( &quot;yyyy-MM-dd&quot;, TRIM( SPLIT( [starttime], &quot; &quot;, 1 ) ) )) ' />
+      </column>
+      <column aggregation='Count' caption='time' datatype='datetime' datatype-customized='true' name='[starttime - Split 2]' role='dimension' type='ordinal' user:SplitFieldIndex='2' user:SplitFieldOrigin='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[starttime]'>
+        <calculation class='tableau' formula='DATEPARSE ( &quot;HH:mm:ss.SSSS&quot;, TRIM( SPLIT( [starttime], &quot; &quot;, 2 ) ) ) ' />
+      </column>
+      <column-instance column='[starttime - Split 1]' derivation='Month' name='[mn:starttime - Split 1:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[starttime - Split 1]' derivation='MY' name='[my:starttime - Split 1:ok]' pivot='key' type='ordinal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.477178' measure-ordering='alphabetic' measure-percentage='0.522822' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[mn:starttime - Split 1:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>10</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>12</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>11</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[my:starttime - Split 1:ok]' type='palette'>
+            <map to='#499894'>
+              <bucket>201908</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>201901</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>201904</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>201912</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>201909</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>201905</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>201902</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>201906</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>201910</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>201907</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>202001</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>201911</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>201903</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Canada&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Trips recorded from 2019-Jan to 2020-Jan</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='JC-202001-citibike-tripdata' name='federated.0wvau1m1jdw55r0zlumtz1xi4nln' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wvau1m1jdw55r0zlumtz1xi4nln'>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[sum:Number of Records:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{4B558F79-C914-4881-9B40-BD3A9F3027F6}' />
+    </worksheet>
+    <worksheet name='2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='JC-202001-citibike-tripdata' name='federated.0wvau1m1jdw55r0zlumtz1xi4nln' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wvau1m1jdw55r0zlumtz1xi4nln'>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[starttime - Split 1]' derivation='Month' name='[mn:starttime - Split 1:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Number of Records]' derivation='Sum' name='[pcto:sum:Number of Records:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column caption='date' datatype='date' datatype-customized='true' name='[starttime - Split 1]' role='dimension' type='ordinal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[starttime]'>
+              <calculation class='tableau' formula='DATE(DATEPARSE ( &quot;yyyy-MM-dd&quot;, TRIM( SPLIT( [starttime], &quot; &quot;, 1 ) ) )) ' />
+            </column>
+            <column datatype='string' name='[starttime]' role='dimension' type='nominal' />
+            <column-instance column='[starttime - Split 1]' derivation='Year' name='[yr:starttime - Split 1:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]'>
+            <groupfilter function='member' level='[yr:starttime - Split 1:ok]' member='2019' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]' value='p0.00%' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]' value='p0.00%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</rows>
+        <cols>([federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok] / [federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok])</cols>
+        <mark-labels>
+          <mark-label id='0' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>12</value>
+                <value>2019</value>
+                <value>0.048717486485885808</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='1' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>11</value>
+                <value>2019</value>
+                <value>0.076051927783141987</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='2' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>10</value>
+                <value>2019</value>
+                <value>0.10434204970033116</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='3' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>9</value>
+                <value>2019</value>
+                <value>0.12160603733328065</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='4' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>8</value>
+                <value>2019</value>
+                <value>0.12028981570427735</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='5' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>7</value>
+                <value>2019</value>
+                <value>0.10802895193692014</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='6' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>6</value>
+                <value>2019</value>
+                <value>0.097370767038649497</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='7' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>5</value>
+                <value>2019</value>
+                <value>0.089233899744904893</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='8' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>4</value>
+                <value>2019</value>
+                <value>0.081630435587867048</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='9' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>3</value>
+                <value>2019</value>
+                <value>0.058294048356945474</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='10' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>2</value>
+                <value>2019</value>
+                <value>0.045845505708154398</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='11' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+                  <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcto:sum:Number of Records:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>1</value>
+                <value>2019</value>
+                <value>0.048589074619641584</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+        </mark-labels>
+      </table>
+      <simple-id uuid='{E2B0EE6A-B1DF-477A-A4C8-A726EB160940}' />
+    </worksheet>
+    <worksheet name='3'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Percentage ridership growth - Customer</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='JC-202001-citibike-tripdata' name='federated.0wvau1m1jdw55r0zlumtz1xi4nln' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wvau1m1jdw55r0zlumtz1xi4nln'>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[starttime - Split 1]' derivation='Month' name='[mn:starttime - Split 1:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[starttime - Split 1]' derivation='MY' name='[my:starttime - Split 1:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[usertype]' derivation='None' name='[none:usertype:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Records]' derivation='Sum' name='[pcdf:sum:Number of Records:qk]' pivot='key' type='quantitative'>
+              <table-calc diff-options='Relative' ordering-type='Rows' type='PctDiff'>
+                <address>
+                  <value>-1</value>
+                </address>
+              </table-calc>
+            </column-instance>
+            <column caption='date' datatype='date' datatype-customized='true' name='[starttime - Split 1]' role='dimension' type='ordinal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[starttime]'>
+              <calculation class='tableau' formula='DATE(DATEPARSE ( &quot;yyyy-MM-dd&quot;, TRIM( SPLIT( [starttime], &quot; &quot;, 1 ) ) )) ' />
+            </column>
+            <column datatype='string' name='[starttime]' role='dimension' type='nominal' />
+            <column datatype='string' name='[usertype]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[my:starttime - Split 1:ok]'>
+            <groupfilter from='201901' function='range' level='[my:starttime - Split 1:ok]' to='202001' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[none:usertype:nk]'>
+            <groupfilter function='member' level='[none:usertype:nk]' member='&quot;Customer&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[my:starttime - Split 1:ok]</column>
+            <column>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[none:usertype:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[mn:starttime - Split 1:ok]' value='136' />
+            <format attr='width' field='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[none:usertype:nk]' value='143' />
+            <format attr='width' field='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[my:starttime - Split 1:ok]' value='38' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[my:starttime - Split 1:ok]' value='-90' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[my:starttime - Split 1:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[pcdf:sum:Number of Records:qk]</rows>
+        <cols>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[my:starttime - Split 1:ok]</cols>
+      </table>
+      <simple-id uuid='{50CC0410-E8EB-4AAD-8A38-4BFCAC2A4B9F}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BBE1D75C-B887-4B25-9ED8-6978D66A3019}' />
+    </window>
+    <window class='worksheet' name='2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{467BDEC0-2A3E-4513-82A7-E16C2A748BA7}' />
+    </window>
+    <window class='worksheet' maximized='true' name='3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[my:starttime - Split 1:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[my:starttime - Split 1:ok]</field>
+            <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[none:usertype:nk]</field>
+            <field>[federated.0wvau1m1jdw55r0zlumtz1xi4nln].[yr:starttime - Split 1:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{72846A70-DDAC-4EAF-896E-77DD8AA42E81}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='24' name='1' width='64'>
+      iVBORw0KGgoAAAANSUhEUgAAAEAAAAAYCAYAAABKtPtEAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAADQUlEQVRYhe1YX0hTURz+jOlDVi8VVk8R9NC/h9olFBxYpklGCSmExsoZtKBAbCuS2oNB
+      CwmL8sE9WBsp7EEfGgwik1hRsLIwo9GwbLMYd6XGxszWHX09bK17U1NodYP2wXk45/c73++7
+      3z3nx+XmkCT+YyxQW4DayBqgtgC1kTVAbQFqI2uA2gLURtYAtQWojawBagtQG1kDMs4Y7MbB
+      IgF1jmBqYRK+XgsM5ToIggBBVw7DpUeIpjdEMWQzYluRAEFXBVPvCBIz0CZGemGq3oYiQYCu
+      ygTHUFQRjw45YKpK1tCVG3DdDwBBOOqEZF35KDqHh983MqOI0N2kZ2dnM2vtgdTaO/Z13ebw
+      xCQlktJkiLctlTTfipEkYx4Lq80ujsZJafwp2/U17PD/RCsNsHW/ma6RJEc8fI/WajNTFKTY
+      Q2OlLB4Z5mh4FokBO41WL6XUNKMGRPqbaex8TcljkRkwHVJ/M409YyRjdDc10CnKYl4ra9tf
+      TBN9yqZ0RfJYaHYnHfB31KQN/TUkeq2NinqZuwKJJ7B1r8Jx/RpoZsv5EsWr+zaYnMtwuGIp
+      gDF8wGZsKviRotmyFatDonLfshX46upG3/svaR7xax4+vgkCGMfzwbWoKM2fW2P4Jm5EK7Bb
+      Xm/+T/grJOCzObDwRBvWz8gYhKNuH676gQLdSbRebMCGfAD4jKkFi6CQrtFAE3ij3J6/E2cs
+      PjQeKMXpiSnkLl6NzYXLIeaNAchHLC+G4RYDLtwdwsRULhav24OzrWZsXykXk4Cvx4ONh64o
+      683j3MyJBy2F1Gq100etnTNehICd+pYHnPcVmAaJXmsVrd7kTR5oVR5rMkB7rYUeRUljOl+O
+      DDfBFOQ94F0fu1zP+TYST87jYT5u17Mm1enm1QT5iQH/MJMUcY66zKzUd6XNlV6003DMSd+k
+      RDLO8OPL1JtvMd0VJC+tjU6KP9PybxgQG6G77Sj3laROSXEZ68/3M5R+GRE+6zjCkkIttcV7
+      edYdSnZo0cmG8jYOprJeXqtnWbGWWm0xy+rb6I3IC0oM9Z/ngZLCGeOi0zhrk/wzBmQAotPI
+      Jndk7sTfxD/7JXhndAdO7lryx+vkkP/3b/FvkXPzgMyb4jsAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='2' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='3' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
