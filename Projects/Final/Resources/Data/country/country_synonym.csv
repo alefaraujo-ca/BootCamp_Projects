@@ -1,0 +1,281 @@
+﻿Country_Id,Synonym_Id,Synonym
+4,1,Afghanistan
+8,2,Albania
+12,3,Algeria
+16,4,American Samoa
+20,5,Andorra
+24,6,Angola
+660,7,Anguilla
+10,8,Antarctica
+28,9,Antigua and Barbuda
+32,10,Argentina
+51,11,Armenia
+533,12,Aruba
+36,13,Australia
+40,14,Austria
+31,15,Azerbaijan
+44,16,The Bahamas
+48,17,Bahrain
+50,18,Bangladesh
+52,19,Barbados
+112,20,Belarus
+56,21,Belgium
+84,22,Belize
+204,23,Benin
+60,24,Bermuda
+64,25,Bhutan
+68,26,Bolivia
+535,27,"Bonaire, Sint Eustatius and Saba"
+70,28,Bosnia and Herzegovina
+72,29,Botswana
+74,30,Bouvet Island
+76,31,Brazil
+86,32,British Indian Ocean Territory (the)
+96,33,Brunei
+100,34,Bulgaria
+854,35,Burkina Faso
+108,36,Burundi
+132,37,Cabo Verde
+116,38,Cambodia
+120,39,Cameroon
+124,40,Canada
+136,41,Cayman Islands
+140,42,Central African Republic
+148,43,Chad
+152,44,Chile
+156,45,China
+162,46,Christmas Island
+166,47,Cocos (Keeling) Islands (the)
+170,48,Colombia
+174,49,Comoros (the)
+180,50,Congo (Kinshasa)
+178,51,Congo (Brazzaville)
+178,52,Republic of the Congo
+184,53,Cook Islands (the)
+188,54,Costa Rica
+191,55,Croatia
+192,56,Cuba
+531,57,Curacao
+196,58,Cyprus
+203,59,Czechia
+384,60,Cote d'Ivoire
+208,61,Denmark
+262,62,Djibouti
+212,63,Dominica
+214,64,Dominican Republic
+218,65,Ecuador
+818,66,Egypt
+222,67,El Salvador
+226,68,Equatorial Guinea
+232,69,Eritrea
+233,70,Estonia
+748,71,Eswatini
+231,72,Ethiopia
+238,73,Falkland Islands (the) [Malvinas]
+234,74,Faroe Islands (the)
+242,75,Fiji
+246,76,Finland
+250,77,France
+254,78,French Guiana
+258,79,French Polynesia
+260,80,French Southern Territories (the)
+266,81,Gabon
+270,82,Gambia (the)
+268,83,Georgia
+276,84,Germany
+288,85,Ghana
+292,86,Gibraltar
+300,87,Greece
+304,88,Greenland
+308,89,Grenada
+312,90,Guadeloupe
+316,91,Guam
+320,92,Guatemala
+831,93,Guernsey
+324,94,Guinea
+624,95,Guinea-Bissau
+328,96,Guyana
+332,97,Haiti
+334,98,Heard Island and McDonald Islands
+336,99,Holy See
+340,100,Honduras
+344,101,Hong Kong
+348,102,Hungary
+352,103,Iceland
+356,104,India
+360,105,Indonesia
+364,106,Iran
+368,107,Iraq
+372,108,Ireland
+833,109,Isle of Man
+376,110,Israel
+380,111,Italy
+388,112,Jamaica
+392,113,Japan
+832,114,Jersey
+400,115,Jordan
+398,116,Kazakhstan
+404,117,Kenya
+296,118,Kiribati
+408,119,Korea (the Democratic People's Republic of)
+410,120,"Korea, South"
+414,121,Kuwait
+417,122,Kyrgyzstan
+418,123,Lao People's Democratic Republic (the)
+428,124,Latvia
+422,125,Lebanon
+426,126,Lesotho
+430,127,Liberia
+434,128,Libya
+438,129,Liechtenstein
+440,130,Lithuania
+442,131,Luxembourg
+446,132,Macao
+450,133,Madagascar
+454,134,Malawi
+458,135,Malaysia
+462,136,Maldives
+466,137,Mali
+470,138,Malta
+584,139,Marshall Islands (the)
+474,140,Martinique
+478,141,Mauritania
+480,142,Mauritius
+175,143,Mayotte
+484,144,Mexico
+583,145,Micronesia (Federated States of)
+498,146,Moldova
+492,147,Monaco
+496,148,Mongolia
+499,149,Montenegro
+500,150,Montserrat
+504,151,Morocco
+508,152,Mozambique
+104,153,Myanmar
+516,154,Namibia
+520,155,Nauru
+524,156,Nepal
+528,157,Netherlands
+540,158,New Caledonia
+554,159,New Zealand
+558,160,Nicaragua
+562,161,Niger (the)
+566,162,Nigeria
+570,163,Niue
+574,164,Norfolk Island
+580,165,Northern Mariana Islands (the)
+578,166,Norway
+512,167,Oman
+586,168,Pakistan
+585,169,Palau
+275,170,occupied Palestinian territory
+591,171,Panama
+598,172,Papua New Guinea
+600,173,Paraguay
+604,174,Peru
+608,175,Philippines
+612,176,Pitcairn
+616,177,Poland
+620,178,Portugal
+630,179,Puerto Rico
+634,180,Qatar
+807,181,North Macedonia
+642,182,Romania
+643,183,Russia
+646,184,Rwanda
+638,185,Reunion
+652,186,Saint Barthélemy
+654,187,"Saint Helena, Ascension and Tristan da Cunha"
+659,188,Saint Kitts and Nevis
+662,189,Saint Lucia
+663,190,Saint Martin (French part)
+666,191,Saint Pierre and Miquelon
+670,192,Saint Vincent and the Grenadines
+882,193,Samoa
+674,194,San Marino
+678,195,Sao Tome and Principe
+682,196,Saudi Arabia
+686,197,Senegal
+688,198,Serbia
+690,199,Seychelles
+694,200,Sierra Leone
+702,201,Singapore
+534,202,Sint Maarten (Dutch part)
+703,203,Slovakia
+705,204,Slovenia
+90,205,Solomon Islands
+706,206,Somalia
+710,207,South Africa
+239,208,South Georgia and the South Sandwich Islands
+728,209,Sudan
+724,210,Spain
+144,211,Sri Lanka
+729,212,Sudan (the)
+740,213,Suriname
+744,214,Svalbard and Jan Mayen
+752,215,Sweden
+756,216,Switzerland
+760,217,Syrian Arab Republic
+158,218,Taiwan (Province of China)
+762,219,Tajikistan
+834,220,Tanzania
+764,221,Thailand
+626,222,Timor-Leste
+768,223,Togo
+772,224,Tokelau
+776,225,Tonga
+780,226,Trinidad and Tobago
+788,227,Tunisia
+792,228,Turkey
+795,229,Turkmenistan
+796,230,Turks and Caicos Islands (the)
+798,231,Tuvalu
+800,232,Uganda
+804,233,Ukraine
+784,234,United Arab Emirates
+826,235,United Kingdom
+581,236,United States Minor Outlying Islands (the)
+840,237,US
+858,238,Uruguay
+860,239,Uzbekistan
+548,240,Vanuatu
+862,241,Venezuela
+704,242,Vietnam
+92,243,Virgin Islands (British)
+850,244,Virgin Islands (U.S.)
+876,245,Wallis and Futuna
+732,246,Western Sahara
+887,247,Yemen
+894,248,Zambia
+716,249,Zimbabwe
+248,250,Åland Islands
+10000,251,Cruise Ship
+10001,252,Kosovo
+270,253,The Gambia
+270,254,"Gambia, The"
+158,255,Taiwan*
+156,256,Mainland China
+203,257,Czech Republic
+208,258,Faroe Islands
+344,259,Hong Kong SAR
+364,260,Iran (Islamic Republic of)
+446,261,Macao SAR
+446,262,Macau
+10000,263,Others
+275,264,Palestine
+372,265,Republic of Ireland
+408,266,Republic of Korea
+498,267,Republic of Moldova
+643,268,Russian Federation
+250,269,Saint Barthelemy
+663,270,Saint Martin
+410,271,South Korea
+663,272,St. Martin
+158,273,Taipei and environs
+158,274,Taiwan
+826,275,UK
+336,276,Vatican City
+704,277,Viet Nam
+384,278,Ivory Coast
+31,279, Azerbaijan
+826,280,North Ireland
