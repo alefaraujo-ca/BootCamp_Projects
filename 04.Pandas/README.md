@@ -1,4 +1,4 @@
-# Pandas challenge - Pandas, Pandas, Pandas
+# Pandas Challenge - Pandas, Pandas, Pandas
 
 ## Background
 
