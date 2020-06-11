@@ -1,4 +1,4 @@
-# Excel challenge: Kickstart My Chart
+# Excel Challenge: Kickstart My Chart
 
 ## Background
 
