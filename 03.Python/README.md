@@ -1,4 +1,4 @@
-# Python Homework - Py Me Up, Charlie
+# Python challenge - Py Me Up, Charlie
 
 ## Background
 
