@@ -1,4 +1,4 @@
-# Matplotlib challenge - The Power of Plots
+# Matplotlib Challenge - The Power of Plots
 
 ## Background
 
