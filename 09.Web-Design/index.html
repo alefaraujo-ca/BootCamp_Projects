@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Latitude Analysis Dashboard</title>
+
+  <!-- Bring in our bootstrap stylesheet -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="./resources/assets/css/style.css">
+
+</head>
+
+<body>
+  <!-- Start of navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white" id="top-navbar">
+    <!--<button type="button" class="btn btn-info">Lattitude</button>-->
+    <a class="btn btn-info" href="index.html" role="button">Lattitude</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-md-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Plots
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-muted" href="./visualizations/temperature.html">Max Temperature</a>
+            <a class="dropdown-item text-muted" href="./visualizations/humidity.html">Humidity</a>
+            <!--<div class="dropdown-divider"></div>-->
+            <a class="dropdown-item text-muted" href="./visualizations/cloudiness.html">Cloudiness</a>
+            <a class="dropdown-item text-muted" href="./visualizations/windspeed.html">Wind Speed</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./visualizations/comparison.html">Comparison</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./visualizations/data.html">Data</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="col-md-12"> <br> </div>
+  </div>
+
+  <div class="container">
+    <!-- put all content inside of here -->
+    <session class="row">
+      <div class="col-md-8 col-xs-12">
+        <article class="description-content">
+          <h2 class="text-info">Summary: Lattitude vs. X</h2>
+          <hr class="description-hr" />
+
+          <img src="./resources/images/Fig1.png" height="260" width="240" align="left" alt="first image" />
+
+          <p class="text-justify text-muted p-linespacing">
+            The purpose of this project was to analyse how weather changes as you get closer to
+            the equador. To accomplish this analysis, we first pulled data from the OpenWeatherMap API
+            to assemble a dataset on over 500 cities.
+          </p>
+          <br>
+
+          <p class="text-justify text-muted p-linespacing">
+            After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs.
+            latitude. Factors we looked at included: temperature, cloudiness, wind speed, and humidity. This site
+            provides the source data and visualizations created as part of the analysis, as well as explanations and
+            descriptions of any trends and correlations witnessed.
+          </p>
+        </article>
+      </div>
+
+      <div class="col-md-4 col-xs-12">
+        <div class="visualization-content">
+          <h3 class="text-info">Visualization</h3>
+          <hr class="description-hr" />
+          <div class="row">
+            <div class="col-md-6 col-sm-3">
+              <!-- Figure 1 -->
+              <a href="./visualizations/temperature.html"><img class="img-fluid" src="./resources/images/Fig1.png"
+                  class="visualization-image" alt="Latitude vs. Max Temperature"></a>
+            </div>
+            <div class="col-md-6 col-sm-3">
+              <!-- Figure 2 -->
+              <a href="./visualizations/temperature.html"><img class="img-fluid" src="./resources/images/Fig2.png"
+                  class="visualization-image" alt="Latitude vs. Humidity"></a>
+            </div>
+            <div class="col-md-6 col-sm-3">
+              <!-- Figure 3? -->
+              <a href="./visualizations/temperature.html"><img class="img-fluid" src="./resources/images/Fig3.png"
+                  class="visualization-image" alt="Latitude vs. Cloudiness"></a>
+            </div>
+            <div class="col-md-6 col-sm-3">
+              <!-- Figure 4 -->
+              <a href="./visualizations/temperature.html"><img class="img-fluid" src="./resources/images/Fig4.png"
+                  class="visualization-image" alt="Latitude vs. Wind Speed"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </session>
+  </div>
+</body>
+
+</html>
