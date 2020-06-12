@@ -256,7 +256,7 @@
 158,255,Taiwan*
 156,256,Mainland China
 203,257,Czech Republic
-208,258,Faroe Islands
+234,258,Faroe Islands
 344,259,Hong Kong SAR
 364,260,Iran (Islamic Republic of)
 446,261,Macao SAR
@@ -267,7 +267,7 @@
 408,266,Republic of Korea
 498,267,Republic of Moldova
 643,268,Russian Federation
-250,269,Saint Barthelemy
+652,269,Saint Barthelemy
 663,270,Saint Martin
 410,271,South Korea
 663,272,St. Martin
@@ -279,3 +279,13 @@
 384,278,Ivory Coast
 31,279, Azerbaijan
 826,280,North Ireland
+44,281,"Bahamas, The"
+10002,282,Channel Islands
+562,283,Niger
+132,284,Cape Verde
+626,285,East Timor
+44,286,Bahamas
+270,287,Gambia
+760,288,Syria
+418,288,Laos
+10000,289,Diamond Princess
