@@ -9,7 +9,9 @@ This project collects data from COVID-19 Data Repository by the Center for Syste
 
 •	Python code to create bar chart race with numbers of deaths.
 
+
 Used: Python, Tableau, Pandas, Matplotlib, Plot.ly, Requests, JSON
+
 
 <b>Tableau Viz:
 https://public.tableau.com/profile/alessandra8740#!/vizhome/COVID-19_JHU_15936401134700/COVID-19
