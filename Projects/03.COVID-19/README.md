@@ -1,5 +1,6 @@
 # COVID-19 evolution
 
+![covid-19](img/covid-19.jpg)
 
 This project collects data from COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at John Hopkins University and creates a dashboard to display the number of confirmed cases and deaths around the world.
 
