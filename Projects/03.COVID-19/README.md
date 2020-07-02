@@ -10,4 +10,4 @@ This project collects data from COVID-19 Data Repository by the Center for Syste
 Used: Python, Tableau, Pandas, Matplotlib, Plot.ly, Requests, JSON
 
 <b>Tableau Viz:
-https://public.tableau.com/shared/CXB3X729Q?:display_count=y&:origin=viz_share_link
+https://public.tableau.com/profile/alessandra8740#!/vizhome/COVID-19_JHU_15936401134700/COVID-19
