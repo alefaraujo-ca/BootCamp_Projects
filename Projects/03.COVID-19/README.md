@@ -1,4 +1,4 @@
-# COVID-19 evolution
+# COVID-19 around the World
 
 ![covid-19](img/covid-19.jpg)
 
